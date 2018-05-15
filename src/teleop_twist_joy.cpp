@@ -73,12 +73,12 @@ struct TeleopTwistJoy::Impl
 
  void TeleopTwistJoy::Impl::timerCallback(const ros::TimerEvent& e)
 {
-    cmd_vel_pub.publish(cmd_vel_msg);
+    //cmd_vel_pub.publish(cmd_vel_msg);
 
-//    if (!sent_disable_msg)
+    if (!sent_disable_msg)
     {
-  //    cmd_vel_pub.publish(cmd_vel_msg);
-    //  sent_disable_msg = true;
+      cmd_vel_pub.publish(cmd_vel_msg);
+      //sent_disable_msg = true;
     }
 
 }
